@@ -1,12 +1,19 @@
-import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { Route } from 'react-router-dom';
-import './App.css';
-import Home from './components';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
+import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { Route } from "react-router-dom";
+import "./App.css";
+import Home from "./components";
+import About from "./components/About";
+import Portfolio from "./components/Portfolio";
 
 function App() {
+  AOS.init({
+    duration: 800,
+    easing: "ease-in-out-back",
+    delay: 0,
+  });
   return (
     <>
       <CssBaseline />
