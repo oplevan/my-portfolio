@@ -7,32 +7,6 @@ import useFullPageLoader from "../hooks/useFullPageLoader";
 
 // CSS Styles
 const useStyles = makeStyles((theme) => ({
-  pageTitle: {
-    fontWeight: 800,
-    letterSpacing: "-2px",
-    position: "relative",
-    marginBottom: "5rem",
-    color: "#08fdd8",
-    textTransform: "uppercase",
-    textAlign: "center",
-    "&:after": {
-      content: '""',
-      position: "absolute",
-      width: "6rem",
-      left: "50%",
-      bottom: "-1rem",
-      transform: "translateX(-3rem)",
-      borderBottom: "solid 4px #cacaca",
-      [theme.breakpoints.down("sm")]: {
-        width: "4.5rem",
-        transform: "translateX(-2.25rem)",
-      },
-    },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "2.3rem",
-    },
-  },
-
   bottomContainer: {
     textAlign: "left",
     padding: "2rem 0",
@@ -71,7 +45,7 @@ const Portfolio = () => {
   // Filters
   const [filter, setFilter] = useState("all");
   const [projects, setProjects] = useState([]);
-  const [condition, setCondition] = useState(false);
+  //const [condition, setCondition] = useState(false);
 
   useEffect(() => {
     setProjects(portfolio);
@@ -104,9 +78,7 @@ const Portfolio = () => {
       <Navbar />
       <Box component="section" className="page__content" id="portfolio">
         <Container maxWidth="lg" component="header">
-          <Typography variant="h3" className={classes.pageTitle}>
-            My works
-          </Typography>
+          <h3 className="page__title">My works</h3>
           <Box component="div">
             From Web Components and UI/UX animations to React.JS, Redux, and
             Node.JS. Check out my latest web development portfolio projects.

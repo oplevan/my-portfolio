@@ -7,6 +7,7 @@ import "./App.css";
 import Home from "./components";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
+import Experience from "./components/Experience";
 
 function App() {
   AOS.init({
@@ -20,6 +21,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/portfolio" component={Portfolio} />
+      <Route path="/experience" component={Experience} />
     </>
   );
 }

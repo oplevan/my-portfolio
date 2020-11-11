@@ -121,3 +121,44 @@ export const portfolio = [
     },
   },
 ];
+
+export const timeline = [
+  {
+    position: "Assistant Project Manager",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at laoreet arcu. Fusce posuere et augue vitae scelerisque. Sed ut pretium nisi, at dictum orci. Donec varius a mi nec sodales. Morbi ac aliquam turpis. Ut id luctus lectus. Vivamus nunc enim, blandit et accumsan eget, volutpat non dolor. Sed gravida pulvinar porta.",
+    company: "Agma",
+    where: "London, UK",
+    type: "Full-time",
+    duration: "1 yr 7 mos",
+    end: "Present",
+    start: "JUN, 2018",
+  },
+  {
+    position: "Assistant Accountant",
+    description: "Description 1",
+    company: "RK Accounting",
+    where: "London, UK",
+    type: "Full-time",
+    end: "MAY, 2018",
+    start: "NOV, 2016",
+  },
+  {
+    position: "Junior Front End Developer",
+    description: "Description 2",
+    company: "GBC",
+    where: "Chernivtsi, Ukraine",
+    type: "Full-time",
+    end: "Sep, 2016",
+    start: "May, 2015",
+  },
+  {
+    position: "SEO Specialist",
+    description: "Description 3",
+    company: "GBC",
+    where: "Chernivtsi, Ukraine",
+    type: "Full-time",
+    end: "Apr, 2015",
+    start: "Jul, 2013",
+  },
+];

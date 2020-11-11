@@ -156,8 +156,8 @@ const menuItems = [
   },
   {
     listIcon: <Timeline />,
-    listText: "Timeline",
-    listPath: "/timeline",
+    listText: "Experience",
+    listPath: "/experience",
   },
   {
     listIcon: <ContactMail />,
