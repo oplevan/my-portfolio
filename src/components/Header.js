@@ -3,6 +3,7 @@ import { Typography, Button, Box, Container } from '@material-ui/core';
 import Typed from 'react-typed';
 import { makeStyles } from '@material-ui/core';
 import homeImg from '../images/home-img.png';
+import { NavLink } from 'react-router-dom';
 
 //CSS STYLES
 const useStyles = makeStyles((theme) => ({
@@ -111,9 +112,9 @@ const Header = () => {
             ></Typed>
           </Box>
         </Typography>
-        <Button href='/contact' variant='contained' className={classes.btn}>
+        <NavLink to='/contact' variant='contained' className={classes.btn}>
           Contact me
-        </Button>
+        </NavLink>
       </Box>
       <div className={classes.homeImg}>
         {/* <div className='initial'>
