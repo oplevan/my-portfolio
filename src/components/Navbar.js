@@ -1,18 +1,16 @@
-import React from "react";
-import avatar from "../images/avatar.png";
-import { Avatar } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import AppBar from "@material-ui/core/AppBar";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import MenuIcon from "@material-ui/icons/Menu";
-import Toolbar from "@material-ui/core/Toolbar";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import React from 'react';
+import avatar from '../images/avatar.png';
+import { Avatar } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import MenuIcon from '@material-ui/icons/Menu';
+import Toolbar from '@material-ui/core/Toolbar';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
   Home,
   Person,
@@ -23,116 +21,138 @@ import {
   LinkedIn,
   Facebook,
   Instagram,
-} from "@material-ui/icons";
+} from '@material-ui/icons';
 
 const drawerWidth = 75;
 
 // CSS STYLES
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
+    display: 'flex',
   },
   avatar: {
-    background: "#070707",
-    padding: "0",
+    background: '#181818',
+    padding: '0',
     borderRadius: 0,
     margin: 0,
-    width: "74px",
-    height: "74px",
+    width: '74px',
+    height: '74px',
+    position: 'relative',
+    overflow: 'visible',
+    '& img': {
+      width: '80%',
+      height: '80%',
+      marginBottom: '10px',
+    },
+    '&:after': {
+      content: '"Oleg P"',
+      position: 'absolute',
+      bottom: '3px',
+      fontSize: '0.8rem',
+      color: '#08fdd8',
+    },
+    '&:before': {
+      content: '""',
+      position: 'absolute',
+      width: '99%',
+      bottom: '-10px',
+      borderBottom: 'solid 2px #2d2d2d',
+    },
   },
   drawer: {
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       flexShrink: 0,
     },
   },
   appBar: {
-    backgroundColor: "#181818",
-    color: "#08fdd8",
-    [theme.breakpoints.up("sm")]: {
+    backgroundColor: '#181818',
+    color: '#08fdd8',
+    [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
-      display: "none",
+      display: 'none',
     },
   },
   menuButton: {
-    left: "90%",
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
+    left: '90%',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
     },
   },
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    background: "#181818",
-    border: "none",
-    boxShadow: "none",
+    background: '#181818',
+    border: 'none',
+    boxShadow: 'none',
   },
   listItem: {
-    color: "#a5a5a5",
-    width: "74px",
-    position: "relative",
+    color: '#a5a5a5',
+    width: '74px',
+    position: 'relative',
     padding: 0,
-    transition: "all 0.3s",
-    "&:not(:last-child)": {
-      marginBottom: "35px",
+    transition: 'all 0.3s',
+    '&:not(:last-child)': {
+      marginBottom: '35px',
     },
-    "&:hover": {
-      "& $listItemText": {
+    '&:hover': {
+      '& $listItemText': {
         opacity: 1,
-        color: "#08fdd8",
-        transform: "scale(1)",
+        color: '#08fdd8',
+        transform: 'scale(1)',
       },
-      "& $listItemIcon": {
-        color: "#08fdd8",
+      '& $listItemIcon': {
+        color: '#08fdd8',
         opacity: 0,
       },
     },
   },
   listItemIcon: {
-    color: "#a5a5a5",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    transition: "all 0.3s",
+    color: '#a5a5a5',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    transition: 'all 0.3s',
     opacity: 1,
-    width: "100%",
+    width: '100%',
   },
   listItemText: {
-    width: "100%",
-    textTransform: "uppercase",
-    fontSize: "9px",
-    letterSpacing: "1.5px",
-    transition: "all 0.3s",
-    position: "absolute",
+    width: '100%',
+    textTransform: 'uppercase',
+    fontSize: '9px',
+    letterSpacing: '1.5px',
+    transition: 'all 0.3s',
+    position: 'absolute',
     left: 0,
     opacity: 0,
-    textAlign: "center",
-    transform: "scale(0.7)",
+    textAlign: 'center',
+    transform: 'scale(0.7)',
   },
   navContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    height: "100%",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    height: '100%',
   },
   listContainer: {
-    display: "flex",
+    display: 'flex',
   },
   socialContainer: {
-    marginBottom: "20px",
-    "& $listItem": {
-      "&:not(:last-child)": {
-        marginBottom: "15px",
+    marginBottom: '20px',
+    '& $listItem': {
+      '&:not(:last-child)': {
+        display: 'block',
+        marginBottom: '15px',
       },
-      "&:hover": {
-        "& $listItemIcon": {
-          color: "#08fdd8",
+      '&:hover': {
+        '& $listItemIcon': {
+          color: '#08fdd8',
           opacity: 1,
         },
       },
-      "& $svg": {
-        fontSize: "1rem",
+      '& $svg': {
+        fontSize: '1rem',
       },
     },
   },
@@ -141,47 +161,47 @@ const useStyles = makeStyles((theme) => ({
 const menuItems = [
   {
     listIcon: <Home />,
-    listText: "Home",
-    listPath: "/",
+    listText: 'Home',
+    listPath: '/',
   },
   {
     listIcon: <Person />,
-    listText: "About",
-    listPath: "/about",
+    listText: 'About',
+    listPath: '/about',
   },
   {
     listIcon: <Apps />,
-    listText: "My works",
-    listPath: "/portfolio",
+    listText: 'Portfolio',
+    listPath: '/portfolio',
   },
   {
     listIcon: <Timeline />,
-    listText: "Experience",
-    listPath: "/experience",
+    listText: 'Timeline',
+    listPath: '/experience',
   },
   {
     listIcon: <ContactMail />,
-    listText: "Contact",
-    listPath: "/contact",
+    listText: 'Contact',
+    listPath: '/contact',
   },
 ];
 
 const socialItems = [
   {
     listIcon: <GitHub />,
-    listPath: "/",
+    listPath: 'https://github.com/oplevan',
   },
   {
     listIcon: <LinkedIn />,
-    listPath: "/",
+    listPath: 'https://www.linkedin.com/in/oleg-plevan-626076134',
   },
   {
     listIcon: <Facebook />,
-    listPath: "/",
+    listPath: 'https://www.facebook.com/helgo.plevan',
   },
   {
     listIcon: <Instagram />,
-    listPath: "/",
+    listPath: 'https://www.instagram.com/o_plevan/',
   },
 ];
 
@@ -196,44 +216,32 @@ const Navbar = (props) => {
   };
 
   const drawer = (
-    <div className={classes.navContainer}>
-      <Avatar className={classes.avatar} src={avatar} alt="Oleg Plevan" />
-      <div className={classes.listContainer}>
-        <List>
-          {menuItems.map((lsItem, key) => (
-            <ListItem
-              className={classes.listItem}
-              button
-              key={key}
-              component={Link}
-              to={lsItem.listPath}
-            >
-              <ListItemIcon className={classes.listItemIcon}>
-                {lsItem.listIcon}
-              </ListItemIcon>
-              <div className={classes.listItemText}>{lsItem.listText}</div>
-            </ListItem>
-          ))}
-        </List>
+    <>
+      <Avatar className={classes.avatar} src={avatar} alt='Oleg Plevan' />
+      <div className='nav-wrap flex column'>
+        {menuItems.map((lsItem, key) => (
+          <NavLink key={key} to={lsItem.listPath} exact>
+            <div className='icon'>{lsItem.listIcon}</div>
+            <div className='title'>{lsItem.listText}</div>
+          </NavLink>
+        ))}
       </div>
       <div className={classes.socialContainer}>
-        <List>
-          {socialItems.map((lsItem, key) => (
-            <ListItem
-              className={classes.listItem}
-              button
-              key={key}
-              component={Link}
-              to={lsItem.listPath}
-            >
-              <ListItemIcon className={classes.listItemIcon}>
-                {lsItem.listIcon}
-              </ListItemIcon>
-            </ListItem>
-          ))}
-        </List>
+        {socialItems.map((lsItem, key) => (
+          <a
+            className={classes.listItem}
+            key={key}
+            href={lsItem.listPath}
+            target='_blank'
+            rel='noreferrer'
+          >
+            <ListItemIcon className={classes.listItemIcon}>
+              {lsItem.listIcon}
+            </ListItemIcon>
+          </a>
+        ))}
       </div>
-    </div>
+    </>
   );
 
   const container =
@@ -242,12 +250,12 @@ const Navbar = (props) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position='fixed' className={classes.appBar}>
         <Toolbar>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
+            color='inherit'
+            aria-label='open drawer'
+            edge='end'
             onClick={handleDrawerToggle}
             className={classes.menuButton}
           >
@@ -256,12 +264,11 @@ const Navbar = (props) => {
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
+        <Hidden smUp implementation='css'>
           <Drawer
             container={container}
-            variant="temporary"
-            anchor={theme.direction === "rtl" ? "right" : "left"}
+            variant='temporary'
+            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
             open={mobileOpen}
             onClose={handleDrawerToggle}
             classes={{
@@ -274,13 +281,13 @@ const Navbar = (props) => {
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden xsDown implementation="css">
+        <Hidden xsDown implementation='css'>
           <Drawer
             classes={{
               paper: classes.drawerPaper,
             }}
-            variant="permanent"
-            open
+            variant='permanent'
+            // close
           >
             {drawer}
           </Drawer>
