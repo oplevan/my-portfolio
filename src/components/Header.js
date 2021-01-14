@@ -24,6 +24,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       fontSize: '3.5rem',
     },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '2.5rem',
+      letterSpacing: '-2px',
+      lineHeight: '3rem',
+    },
   },
   subtitle: {
     alignSelf: 'flex-start',
