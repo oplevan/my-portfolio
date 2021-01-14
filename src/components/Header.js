@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Button, Box, Container } from '@material-ui/core';
+import { Typography, Box, Container } from '@material-ui/core';
 import Typed from 'react-typed';
 import { makeStyles } from '@material-ui/core';
 import homeImg from '../images/home-img.png';
