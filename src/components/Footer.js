@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import * as ROUTES from './constants/routes';
 
 const Footer = () => {
   return (
@@ -12,7 +14,7 @@ const Footer = () => {
         </span>
         <br /> or drop a line in the form at the{' '}
         <span className='fancy'>
-          <a href='/contact'>contact page</a>
+          <NavLink to={ROUTES.CONTACT}>contact page</NavLink>
         </span>
       </p>
     </footer>

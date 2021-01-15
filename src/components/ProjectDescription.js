@@ -11,6 +11,8 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import useFullPageLoader from './useFullPageLoader';
 import Navbar from './Navbar';
+import { NavLink } from 'react-router-dom';
+import * as ROUTES from './constants/routes';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -81,8 +83,8 @@ const ProjectDescription = () => {
           className='project_container'
           component='section'
         >
-          <a
-            href={'/portfolio'}
+          <NavLink
+            to={ROUTES.PORTFOLIO}
             className='back_list'
             title='Back to Portfolio'
           >
@@ -96,7 +98,7 @@ const ProjectDescription = () => {
             <i></i>
             <i></i>
             <span>Back</span>
-          </a>
+          </NavLink>
           <header>
             <h1>{title}</h1>
             <p>{description.short}</p>

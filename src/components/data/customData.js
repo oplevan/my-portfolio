@@ -325,16 +325,19 @@ export const portfolio = [
   // },
   {
     id: 'budgety',
-    title: 'Personal Budget App',
+    title: 'Mini Budget App',
     description: {
       short: 'Simple personal budget app using JavaScript, HTML and CSS',
       full: 'Simple personal budget app using JavaScript, HTML and CSS',
     },
     thumbnail: '/images/budgety/thumbnail.jpg',
     thumbnailHover: '/images/budgety/hover.jpg',
-    carouselImages: ['/images/budgety/slide-1', '/images/budgety/slide-2'],
-    tags: ['WebApp', 'Html5', 'CSS3', 'JavaScript'],
-    category: ['others', 'js'],
+    carouselImages: [
+      '/images/budgety/slide-1.jpg',
+      '/images/budgety/slide-2.jpg',
+    ],
+    tags: ['JavaScript', 'HTML', 'CSS'],
+    category: ['miniapp', 'others', 'js'],
     animation: {
       type: 'fade-up',
       delay: 0,
@@ -350,14 +353,14 @@ export const timeline = [
   {
     position: 'Front End Developer',
     description: [
-      'Worked with various organisations, developing websites that include booking, portfolio, blog and multilingual functionalities',
+      'Worked with various clients, developing websites that include booking, portfolio, blog and multilingual functionalities',
       'Handled various projects on different stages of development',
       'Fixing problems with existing projects (mostly WordPress)',
       'Built custom websites using Bootstrap and WordPress',
     ],
     achievements:
       'Increased user experience satisfaction by 59% from a website redesign. Learned new technologies such as React, Redux, Webpack. Improved English speaking and writing skills from beginner to advanced.',
-    company: 'Freelance',
+    company: 'Various clients',
     where: 'London, UK',
     type: 'Contract',
     duration: '1 yr 7 mos',

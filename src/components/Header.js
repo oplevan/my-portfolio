@@ -4,6 +4,7 @@ import Typed from 'react-typed';
 import { makeStyles } from '@material-ui/core';
 import homeImg from '../images/home-img.png';
 import { NavLink } from 'react-router-dom';
+import * as ROUTES from './constants/routes';
 
 //CSS STYLES
 const useStyles = makeStyles((theme) => ({
@@ -60,6 +61,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'transparent',
     border: 'solid 1px #08fdd8',
     color: '#08fdd8',
+    padding: '0.5rem 1rem',
+    fontWeight: 'normal',
+    transition: '0.2s ease-in-out',
+    textTransform: 'uppercase',
     '&:hover': {
       color: 'black',
       backgroundColor: '#08fdd8',
@@ -112,15 +117,11 @@ const Header = () => {
             ></Typed>
           </Box>
         </Typography>
-        <NavLink to='/contact' variant='contained' className={classes.btn}>
+        <NavLink to={ROUTES.CONTACT} className={classes.btn}>
           Contact me
         </NavLink>
       </Box>
       <div className={classes.homeImg}>
-        {/* <div className='initial'>
-          <div className='letter-o animate__zoomInDown'>O</div>
-          <div className='letter-p animate__zoomInDown'>P</div>
-        </div> */}
         <img className='animate__zoomInDown' src={homeImg} alt='logo' />
       </div>
     </Container>
