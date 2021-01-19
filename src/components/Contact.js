@@ -83,11 +83,7 @@ export default function Contact() {
                 htmlFor='message'
               ></Form.Label>
             </Form.Group>
-            <Box
-              data-netlify-recaptcha='true'
-              component='div'
-              className='recaptcha'
-            ></Box>
+            <div data-netlify-recaptcha='true'></div>
             <Button
               className='button submit_btn'
               variant='contained'
