@@ -111,7 +111,7 @@ export const portfolio = [
       delay: 0,
     },
     links: {
-      web: 'https://my-portfolio.com',
+      web: 'https://oplevan.com',
       gitHub: 'https://github.com/oplevan/my-portfolio',
     },
   },
