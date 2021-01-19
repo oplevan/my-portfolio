@@ -43,8 +43,9 @@ export default function Contact() {
           <Form
             name='contact'
             method='POST'
-            data-netlify='true'
             className='contact-form'
+            data-netlify='true'
+            data-netlify-recaptcha='true'
           >
             <input type='hidden' name='form-name' value='contact' />
             <Form.Group>
