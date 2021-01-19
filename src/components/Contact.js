@@ -45,7 +45,6 @@ export default function Contact() {
             method='POST'
             className='contact-form'
             data-netlify='true'
-            data-netlify-recaptcha='true'
           >
             <input type='hidden' name='form-name' value='contact' />
             <Form.Group>
@@ -83,7 +82,6 @@ export default function Contact() {
                 htmlFor='message'
               ></Form.Label>
             </Form.Group>
-            <div data-netlify-recaptcha='true'></div>
             <Button
               className='button submit_btn'
               variant='contained'
