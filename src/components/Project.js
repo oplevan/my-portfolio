@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Box, Typography, Grid } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LanguageIcon from '@material-ui/icons/Language';
-import Tooltip from '@material-ui/core/Tooltip';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Box, Typography, Grid } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LanguageIcon from "@material-ui/icons/Language";
+import Tooltip from "@material-ui/core/Tooltip";
 
 // CSS Styles
 const DarkTooltip = withStyles((theme) => ({
@@ -13,15 +13,15 @@ const DarkTooltip = withStyles((theme) => ({
   },
   tooltip: {
     backgroundColor: theme.palette.common.grey,
-    color: 'white',
+    color: "white",
     boxShadow: theme.shadows[1],
-    borderRadius: '3px',
-    padding: '10px 15px',
+    borderRadius: "3px",
+    padding: "10px 15px",
     fontSize: 12,
   },
 }))(Tooltip);
 
-const Project = (props) => {
+export default function Project(props) {
   const { id, title, thumbnail, tags, thumbnailHover, links } = props;
 
   return (
@@ -47,33 +47,19 @@ const Project = (props) => {
           <Link to={`/project/${id}`} className='learn__more'>
             <span>Learn more</span>
           </Link>
-          {links.web ? (
+          {links.web && (
             <DarkTooltip title='View on web' placement='top' arrow>
-              <a
-                href={links.web}
-                className='web__link'
-                target='_blank'
-                rel='noreferrer'
-              >
+              <a href={links.web} className='web__link' target='_blank' rel='noreferrer'>
                 <LanguageIcon />
               </a>
             </DarkTooltip>
-          ) : (
-            ''
           )}
-          {links.gitHub ? (
+          {links.gitHub && (
             <DarkTooltip title='View on GitHub' placement='top' arrow>
-              <a
-                href={links.gitHub}
-                className='github__link'
-                target='_blank'
-                rel='noreferrer'
-              >
+              <a href={links.gitHub} className='github__link' target='_blank' rel='noreferrer'>
                 <GitHubIcon />
               </a>
             </DarkTooltip>
-          ) : (
-            ''
           )}
           <div className='hover__bgr'>
             <img src={thumbnailHover} alt={title} />
@@ -82,6 +68,4 @@ const Project = (props) => {
       </div>
     </Grid>
   );
-};
-
-export default Project;
+}

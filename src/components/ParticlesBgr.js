@@ -1,10 +1,10 @@
 import React from "react";
-import Particles from "react-particles-js";
+// import Particles from "react-particles-js";
 
 const ParticlesBgr = () => {
   return (
     <>
-      <Particles
+      {/* <Particles
         className="particles__canvas"
         params={{
           particles: {
@@ -49,7 +49,7 @@ const ParticlesBgr = () => {
           },
           retina_detect: true,
         }}
-      />
+      /> */}
     </>
   );
 };

@@ -2,6 +2,11 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Oleg Plevan",
+    "email": "oleg.plevan@gmail.com",
+    "url": "oplevan.com"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -17,7 +22,6 @@
     "react-bootstrap": "^1.4.0",
     "react-devicon": "^0.1.9",
     "react-dom": "^17.0.1",
-    "react-particles-js": "^3.4.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "react-typed": "^1.2.0",

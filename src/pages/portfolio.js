@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Container, Grid } from '@material-ui/core';
-import { filters, portfolio } from './data/customData';
-import useFullPageLoader from './useFullPageLoader';
-import ParticlesBgr from './ParticlesBgr';
-import Project from './Project';
-import Footer from './Footer';
-import Navbar from './Navbar';
+import React, { useState, useEffect } from "react";
+import { Box, Container, Grid } from "@material-ui/core";
+import { filters, portfolio } from "../components/data/customData";
+import useFullPageLoader from "../components/useFullPageLoader";
+import ParticlesBgr from "../components/ParticlesBgr";
+import Project from "../components/Project";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
-const Portfolio = () => {
+export default function Portfolio() {
   // Filters
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState("all");
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -42,16 +42,14 @@ const Portfolio = () => {
         <Container maxWidth='lg' component='section'>
           <h3 className='page__title'>Portfolio</h3>
           <p align='left'>
-            From small Web Applications and UI/UX animations to React.JS, Redux
-            Apps. Check out my latest web development portfolio projects.
+            From small Web Applications and UI/UX animations to React.JS, Redux Apps. Check out my latest web development
+            portfolio projects.
           </p>
           <ul className='filters' id='filters'>
             {filters.map((item, index) => (
               <li
                 key={index}
-                className={`filter_btn ${item.filter} ${
-                  filter === item.filter ? 'active' : ''
-                }`}
+                className={`filter_btn ${item.filter} ${filter === item.filter ? "active" : ""}`}
                 onClick={() => {
                   setFilter(item.filter);
                 }}
@@ -62,19 +60,8 @@ const Portfolio = () => {
           </ul>
         </Container>
         <Container maxWidth='lg' component='section'>
-          <Grid
-            container
-            spacing={5}
-            justify='center'
-            className='grid__list projects__container'
-          >
-            {projects.map((project) =>
-              project.filtered === true ? (
-                <Project key={project.id} {...project}></Project>
-              ) : (
-                ''
-              )
-            )}
+          <Grid container spacing={5} justify='center' className='grid__list projects__container'>
+            {projects.map((project) => (project.filtered === true ? <Project key={project.id} {...project}></Project> : ""))}
           </Grid>
           <Footer />
         </Container>
@@ -82,6 +69,4 @@ const Portfolio = () => {
       {loader}
     </>
   );
-};
-
-export default Portfolio;
+}

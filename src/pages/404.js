@@ -1,9 +1,9 @@
-import React from 'react';
-import { Box, Container } from '@material-ui/core';
-import ParticlesBgr from './ParticlesBgr';
-import astronaut from '../images/astronaut.png';
+import React from "react";
+import { Box, Container } from "@material-ui/core";
+import ParticlesBgr from "../components/ParticlesBgr";
+import astronaut from "../images/astronaut.png";
 
-const Error = () => {
+export default function Error() {
   return (
     <>
       <Box component='section' className='page__content flex' id='page-404'>
@@ -36,6 +36,4 @@ const Error = () => {
       </Box>
     </>
   );
-};
-
-export default Error;
+}
