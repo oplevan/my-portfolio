@@ -1,0 +1,86 @@
+// colours
+$primary: #08fdd8;
+$secondary: #ff0077;
+$primary-bgr: #1d1d1d;
+$secondary-bgr: #414141;
+$primary-text: #a5a5a5;
+$secondary-text: #8a8a8a;
+
+@mixin flex($alignment: null) {
+  display: flex;
+
+  @if $alignment == h-center {
+    justify-content: center;
+    align-items: center;
+  } @else if $alignment == v-center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } @else if $alignment == h-center-space-between {
+    justify-content: space-between;
+    align-items: center;
+  } @else if $alignment == h-center-start {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+$breakpoint-xsmall: 0px !default;
+$breakpoint-small: 600px !default;
+$breakpoint-medium: 900px !default;
+$breakpoint-large: 1200px !default;
+$breakpoint-xlarge: 1536px !default;
+
+// Break points
+@mixin breakpoint($size) {
+  $breakpoint: $breakpoint-xsmall;
+
+  @if ($size == "sm") {
+    $breakpoint: $breakpoint-small;
+  }
+
+  @if ($size == "md") {
+    $breakpoint: $breakpoint-medium;
+  }
+
+  @if ($size == "lg") {
+    $breakpoint: $breakpoint-large;
+  }
+
+  @if ($size == "xlg") {
+    $breakpoint: $breakpoint-xlarge;
+  }
+
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin breakpoint-only($size) {
+  $min: 2px;
+  $max: $breakpoint-small;
+
+  @if ($size == "small") {
+    $min: $breakpoint-small;
+    $max: $breakpoint-medium;
+  }
+
+  @if ($size == "medium") {
+    $min: $breakpoint-medium;
+    $max: $breakpoint-large;
+  }
+
+  @if ($size == "large") {
+    $min: $breakpoint-large;
+    $max: $breakpoint-xlarge;
+  }
+
+  @if ($size == "xlarge") {
+    $min: $breakpoint-xlarge;
+    $max: 99999px;
+  }
+
+  @media (min-width: $min - 1) AND (max-width: $max) {
+    @content;
+  }
+}

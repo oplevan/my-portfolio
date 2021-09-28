@@ -3,7 +3,7 @@ import Link from "@material-ui/core/Link";
 import CloudDownloadOutlinedIcon from "@material-ui/icons/CloudDownloadOutlined";
 import config from "../config.json";
 
-const DownloadCvBtn = () => {
+export default function DownloadCvBtn() {
   return (
     <>
       <div className='ribbon'>
@@ -14,6 +14,4 @@ const DownloadCvBtn = () => {
       </div>
     </>
   );
-};
-
-export default DownloadCvBtn;
+}

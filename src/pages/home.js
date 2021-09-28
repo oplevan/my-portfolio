@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import Typed from "react-typed";
-import { NavLink } from "react-router-dom";
 import config from "../config.json";
 import { makeStyles } from "@material-ui/core";
 import homeImg from "../images/home-img.png";
 import { Typography, Box, Container } from "@material-ui/core";
-import { Navbar, DownloadCvBtn, useFullPageLoader, ParticlesBgr } from "../components";
+import { Navbar, DownloadCvBtn, useFullPageLoader, ParticlesBgr, Button } from "../components";
+import "../styles/pages/home.scss";
 
 //CSS STYLES
 const useStyles = makeStyles((theme) => ({
   homeSection: {
+    border: "solid 1px red",
     display: "flex",
     justifyContent: "space-between",
     [theme.breakpoints.down("xs")]: {
@@ -46,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   typedContainer: {
     justifyContent: "space-between",
+    alignItems: "flex-start",
     minHeight: "18rem",
     textAlign: "left",
     zIndex: 1,
@@ -54,22 +56,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xsm")]: {
       width: "70%",
-    },
-  },
-  btn: {
-    alignSelf: "flex-start",
-    borderRadius: 0,
-    backgroundColor: "transparent",
-    border: "solid 1px #08fdd8",
-    color: "#08fdd8",
-    padding: "0.5rem 1rem",
-    fontWeight: "normal",
-    transition: "0.2s ease-in-out",
-    textTransform: "uppercase",
-    "&:hover": {
-      color: "black",
-      backgroundColor: "#08fdd8",
-      borderColor: "#08fdd8",
     },
   },
   homeImg: {
@@ -89,31 +75,35 @@ export default function Home() {
 
   const classes = useStyles();
 
-  const fetchData = () => {
+  useEffect(() => {
     showLoader();
     setTimeout(() => {
       hideLoader();
     }, 800);
-  };
-
-  useEffect(() => {
-    fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
       <Navbar />
-      <main className='page__content flex column'>
+      <Box maxWidth='xlg' component='main'>
         <ParticlesBgr />
         <DownloadCvBtn />
-        <Container maxWidth='lg' component='section' className={`${classes.homeSection} flex`}>
+        <Container component='section' className='container' maxWidth='lg'>
           <Box className={`flex column ${classes.typedContainer}`}>
             <Typography className={classes.title} variant='h2'>
-              <Typed strings={["Hello,<br> I'm Oleg, <br> web developer."]} typeSpeed={60} startDelay={1000} />
+              <Typed strings={["HELLO,<br> I'm Oleg, <br> web developer."]} typeSpeed={60} startDelay={1000} />
               <Box variant='div' className={classes.subtitle}>
                 <Typed
-                  strings={["Front End Development", "CSS3/HTML5", "Java Script", "ReactJS", "JSX", "ES5/ES6", "NPM/Webpack"]}
+                  strings={[
+                    "UI Development",
+                    "CSS3|HTML5",
+                    "Java Script",
+                    "React|Redux",
+                    "WordPress",
+                    "ES5/ES6",
+                    "Amazon Web Services",
+                  ]}
                   startDelay={3000}
                   typeSpeed={40}
                   backSpeed={50}
@@ -121,15 +111,13 @@ export default function Home() {
                 />
               </Box>
             </Typography>
-            <NavLink to={config.url.CONTACT} className={classes.btn}>
-              Contact me
-            </NavLink>
+            <Button name='Contact me' linkTo={config.url.CONTACT} />
           </Box>
           <div className={classes.homeImg}>
             <img className='animate__zoomInDown' src={homeImg} alt='logo' />
           </div>
         </Container>
-      </main>
+      </Box>
       {loader}
     </>
   );

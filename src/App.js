@@ -1,12 +1,10 @@
 import React from "react";
-import AOS from "aos";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import config from "./config.json";
 
 // CSS
-import "./App.css";
-import "aos/dist/aos.css";
+// import "./App.css";
+import "./styles/main.scss";
 
 // Pages
 import Home from "./pages/home";
@@ -18,14 +16,8 @@ import Contact from "./pages/contact";
 import Error from "./pages/404";
 
 export default function App() {
-  AOS.init({
-    duration: 800,
-    easing: "ease-in-out-back",
-    delay: 0,
-  });
   return (
     <Router>
-      <CssBaseline />
       <Switch>
         <Route exact path={config.url.HOME} component={Home} />
         <Route path={config.url.ABOUT} component={About} />

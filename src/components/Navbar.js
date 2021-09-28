@@ -3,7 +3,6 @@ import avatar from "../images/avatar.png";
 import { Avatar } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
@@ -231,7 +230,6 @@ const Navbar = (props) => {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <AppBar position='fixed' className={classes.appBar}>
         <Toolbar>
           <IconButton

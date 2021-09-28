@@ -1,0 +1,13 @@
+@import "../shared";
+
+main {
+  @include flex("v-center");
+
+  .container {
+    @include flex("h-center-space-between");
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+}
