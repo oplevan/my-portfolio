@@ -1,0 +1,151 @@
+@import "../shared";
+
+main {
+  .cards-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 70px;
+
+    @include breakpoint("md") {
+      gap: 0;
+      flex-flow: row wrap;
+      align-items: stretch;
+    }
+
+    .card {
+      max-width: 220px;
+      cursor: pointer;
+      text-align: center;
+
+      &:nth-of-type(3) svg {
+        transform: rotateX(180deg);
+      }
+
+      &:hover .icon:before {
+        box-shadow: 0 0 0 0 #00000000;
+        animation: pulse 2s infinite;
+      }
+
+      @include breakpoint("md") {
+        width: 50%;
+        align-content: flex-start;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          margin-bottom: 60px;
+        }
+      }
+
+      .icon {
+        background: transparent;
+        border: solid 3px $secondary-bgr;
+        position: relative;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        z-index: 1;
+        @include flex(v-center);
+        margin: auto;
+
+        svg {
+          font-size: 3rem;
+          perspective: 4000px;
+          color: #999;
+
+          @include breakpoint("sm") {
+            font-size: 1.5rem;
+          }
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: 0.5rem;
+          border-radius: 50%;
+          background-color: $secondary-bgr;
+          box-shadow: 0 0 0 0 #00000000;
+        }
+
+        @include breakpoint("sm") {
+          width: 4rem;
+          height: 4rem;
+          line-height: 4.5rem;
+        }
+      }
+
+      .text {
+        span {
+          font-size: 24px;
+          display: block;
+          letter-spacing: -2px;
+          margin: 15px auto 5px;
+
+          @include breakpoint("sm") {
+            font-size: 18px;
+          }
+        }
+
+        @include breakpoint("lg") {
+          padding: 0;
+        }
+
+        @include breakpoint("sm") {
+          font-size: 0.8rem;
+          line-height: 1.2rem;
+          padding: 0 0.8rem;
+        }
+      }
+    }
+  }
+
+  .content {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+
+    h4 {
+      color: $primary;
+
+      @include breakpoint("lg") {
+        font-size: 24px;
+      }
+    }
+
+    @include breakpoint("md") {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    @include breakpoint("sm") {
+      flex-direction: column;
+    }
+
+    .bio {
+      width: 45%;
+
+      @include breakpoint("sm") {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+
+        li {
+          text-align: left;
+        }
+      }
+    }
+
+    .skills {
+      width: 45%;
+
+      @include breakpoint("sm") {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

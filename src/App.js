@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import config from "./config.json";
+import { Footer } from "./components";
 
 // CSS
 // import "./App.css";
@@ -27,6 +28,7 @@ export default function App() {
         <Route path={config.url.CONTACT} component={Contact} />
         <Route path='*' component={Error} />
       </Switch>
+      <Footer />
     </Router>
   );
 }

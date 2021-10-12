@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../images/avatar.png";
+import avatar from "../assets/avatar.png";
 import { Avatar } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";

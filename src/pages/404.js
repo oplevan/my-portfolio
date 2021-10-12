@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container } from "@material-ui/core";
 import ParticlesBgr from "../components/ParticlesBgr";
-import astronaut from "../images/astronaut.png";
+import astronaut from "../assets/astronaut.png";
 
 export default function Error() {
   return (

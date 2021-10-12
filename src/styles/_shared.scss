@@ -3,6 +3,7 @@ $primary: #08fdd8;
 $secondary: #ff0077;
 $primary-bgr: #1d1d1d;
 $secondary-bgr: #414141;
+$fancy-element-bgr: #313131;
 $primary-text: #a5a5a5;
 $secondary-text: #8a8a8a;
 
@@ -82,5 +83,20 @@ $breakpoint-xlarge: 1536px !default;
 
   @media (min-width: $min - 1) AND (max-width: $max) {
     @content;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 $primary;
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px #00000000;
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 #00000000;
   }
 }

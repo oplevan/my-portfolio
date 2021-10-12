@@ -1,0 +1,90 @@
+@import "../shared";
+
+.button-list-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 15px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+
+  .button {
+    @include flex(h-center);
+    padding: 5px 8px;
+    background-color: $fancy-element-bgr;
+    color: #999;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: #222;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+    opacity: 1;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    &:before,
+    &:after {
+      content: " ";
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      height: 50%;
+      display: block;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      -moz-transition: -moz-transform 0.3s cubic-bezier(0.65, 0.05, 0.1, 1);
+      -o-transition: -o-transform 0.3s cubic-bezier(0.65, 0.05, 0.1, 1);
+      -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.65, 0.05, 0.1, 1);
+      transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.1, 1);
+    }
+
+    &:before {
+      top: 0;
+      background-color: #515151;
+      -moz-transform: translate3d(-105%, 0, 0);
+      -ms-transform: translate3d(-105%, 0, 0);
+      -webkit-transform: translate3d(-105%, 0, 0);
+      transform: translate3d(-105%, 0, 0);
+    }
+
+    &:after {
+      background-color: #3f3f3f;
+      top: 50%;
+      -moz-transform: translate3d(105%, 0, 0);
+      -ms-transform: translate3d(105%, 0, 0);
+      -webkit-transform: translate3d(105%, 0, 0);
+      transform: translate3d(105%, 0, 0);
+      -moz-transition-delay: 75ms;
+      -o-transition-delay: 75ms;
+      -webkit-transition-delay: 75ms;
+      transition-delay: 75ms;
+    }
+
+    &:hover:before,
+    &:hover:after {
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    &:hover,
+    &.active {
+      color: $primary;
+    }
+
+    .icon {
+      height: 24px;
+      width: auto;
+      margin-right: 8px;
+    }
+  }
+}

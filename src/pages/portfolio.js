@@ -4,8 +4,9 @@ import { filters, portfolio } from "../components/data/customData";
 import useFullPageLoader from "../components/useFullPageLoader";
 import ParticlesBgr from "../components/ParticlesBgr";
 import Project from "../components/Project";
-import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+
+import "../styles/pages/portfolio.scss";
 
 export default function Portfolio() {
   // Filters
@@ -37,19 +38,19 @@ export default function Portfolio() {
   return (
     <>
       <Navbar />
-      <Box component='main' className='page__content' id='portfolio'>
+      <Box component='main' id='portfolio'>
         <ParticlesBgr />
         <Container maxWidth='lg' component='section'>
-          <h3 className='page__title'>Portfolio</h3>
+          <h1>Portfolio</h1>
           <p align='left'>
             From small Web Applications and UI/UX animations to React.JS, Redux Apps. Check out my latest web development
             portfolio projects.
           </p>
-          <ul className='filters' id='filters'>
+          <ul className='filters'>
             {filters.map((item, index) => (
               <li
                 key={index}
-                className={`filter_btn ${item.filter} ${filter === item.filter ? "active" : ""}`}
+                className={`${item.filter} ${filter === item.filter && "active"}`}
                 onClick={() => {
                   setFilter(item.filter);
                 }}
@@ -63,7 +64,6 @@ export default function Portfolio() {
           <Grid container spacing={5} justify='center' className='grid__list projects__container'>
             {projects.map((project) => (project.filtered === true ? <Project key={project.id} {...project}></Project> : ""))}
           </Grid>
-          <Footer />
         </Container>
       </Box>
       {loader}

@@ -4,9 +4,13 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   neon: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     textTransform: "uppercase",
     position: "relative",
-    padding: "15px 30px",
+    padding: "0 30px",
+    height: "50px",
     color: "#08fdd8",
     letterSpacing: "4px",
     fontSize: "14px",
@@ -14,6 +18,11 @@ const useStyles = makeStyles((theme) => ({
     transition: "0.2s",
     WebkitBoxReflect: "below 1px linear-gradient(transparent, #0005)",
     // filter: "hue-rotate(290deg)",
+
+    "& i": {
+      marginLeft: "10px",
+      lineHeight: 0,
+    },
 
     "&:hover": {
       color: "#1d1d1d",
@@ -74,24 +83,22 @@ const useStyles = makeStyles((theme) => ({
         background: "linear-gradient(360deg, transparent, #08fdd8)",
       },
     },
-    // [theme.breakpoints.down("xs")]: {
-    //   flexDirection: "column",
-    // },
   },
 }));
 
 export default function Button(props) {
-  const { name, linkTo } = props;
+  const { name, linkTo, icon } = props;
+
   const selector = useStyles();
+
   return (
-    <>
-      <NavLink className={selector.neon} to={linkTo}>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        {name}
-      </NavLink>
-    </>
+    <NavLink className={selector.neon} to={linkTo}>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      {name}
+      {icon && <i>{icon}</i>}
+    </NavLink>
   );
 }
