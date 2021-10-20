@@ -22,7 +22,7 @@ import ubuntuIcon from "../assets/devicons/original/ubuntu-plain.svg";
 import seoIcon from "../assets/devicons/original/seo.svg";
 import photoshopIcon from "../assets/devicons/original-wordmark/photoshop-line.svg";
 
-import { ParticlesBgr, useFullPageLoader, ButtonList } from "../components";
+import { ParticlesBgr, useFullPageLoader, Button } from "../components";
 
 import "../styles/pages/about.scss";
 
@@ -127,9 +127,13 @@ export default function About() {
           </Box>
           <Box component='div' className='skills'>
             <Typography variant='h4'>Tech Skills</Typography>
-            <ButtonList data={techSkills} />
+            {techSkills.map((item, i) => (
+              <Button key={i} type='default' title={item.title} icon={item.icon} />
+            ))}
             <Typography variant='h6'>Other skills</Typography>
-            <ButtonList data={otherSkills} />
+            {otherSkills.map((item, i) => (
+              <Button key={i} type='default' title={item.title} icon={item.icon} />
+            ))}
           </Box>
         </Container>
       </Box>

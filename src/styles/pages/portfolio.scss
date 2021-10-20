@@ -1,1 +1,17 @@
 @import "../shared";
+
+.filters {
+  padding: 0;
+  text-align: left;
+  margin: 35px 0 10px;
+
+  small {
+    font-size: 12px;
+    display: block;
+    margin: 30px 0 4px;
+
+    strong {
+      text-transform: uppercase;
+    }
+  }
+}

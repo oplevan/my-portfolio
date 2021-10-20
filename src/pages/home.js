@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Box maxWidth='xlg' component='main'>
+      <Box maxWidth='xlg' component='main' className='home'>
         <ParticlesBgr />
         <Container component='section' className='container' maxWidth='lg'>
           <Box className='typed-box'>
@@ -45,8 +45,8 @@ export default function Home() {
               />
             </Typography>
             <Box className='buttons-wrap'>
-              <Button name='Contact me' linkTo={config.url.CONTACT} />
-              <Button name='View cv' linkTo={config.url.CV} icon={<CloudDownloadOutlined />} />
+              <Button type='neon' title='Contact me' linkTo={config.url.CONTACT} size='large' reflect />
+              <Button type='neon' title='View cv' linkTo={config.url.CV} size='large' icon={<CloudDownloadOutlined />} reflect />
             </Box>
           </Box>
           <div className='hero-img'>

@@ -5,6 +5,9 @@ import { withStyles } from "@material-ui/core/styles";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LanguageIcon from "@material-ui/icons/Language";
 import Tooltip from "@material-ui/core/Tooltip";
+import { ButtonList, Button } from ".";
+
+import "../styles/components/item.scss";
 
 // CSS Styles
 const DarkTooltip = withStyles((theme) => ({
@@ -21,20 +24,20 @@ const DarkTooltip = withStyles((theme) => ({
   },
 }))(Tooltip);
 
-export default function Project(props) {
+export default function Item(props) {
   const { id, title, thumbnail, tags, thumbnailHover, links } = props;
 
   return (
     <Grid item sm={12} md={6} id={id}>
-      <div className='screen item'>
-        <Box component='div' className='bar'>
-          <Typography variant='h3'>{title}</Typography>
+      <div className='inner-container'>
+        <div className='bar'>
+          <h3>{title}</h3>
           <i></i>
-        </Box>
-        <Box component='div' className={`main`}>
-          <Box component='picture' className='back'>
+        </div>
+        <div className='body'>
+          <picture className='back'>
             <img src={thumbnail} alt={title} />
-          </Box>
+          </picture>
           <div className='tags'>
             <div className='wrapper flex column'>
               <ul>
@@ -44,19 +47,19 @@ export default function Project(props) {
               </ul>
             </div>
           </div>
-          <Link to={`/project/${id}`} className='learn__more'>
-            <span>Learn more</span>
-          </Link>
+          <div className='learn-more'>
+            <Button type='neon' linkTo={`/project/${id}`} title='Learn more' size='small' />
+          </div>
           {links.web && (
             <DarkTooltip title='View on web' placement='top' arrow>
-              <a href={links.web} className='web__link' target='_blank' rel='noreferrer'>
+              <a href={links.web} className='view-link web' target='_blank' rel='noopener noreferrer'>
                 <LanguageIcon />
               </a>
             </DarkTooltip>
           )}
           {links.gitHub && (
             <DarkTooltip title='View on GitHub' placement='top' arrow>
-              <a href={links.gitHub} className='github__link' target='_blank' rel='noreferrer'>
+              <a href={links.gitHub} className='view-link github' target='_blank' rel='noopener noreferrer'>
                 <GitHubIcon />
               </a>
             </DarkTooltip>
@@ -64,7 +67,7 @@ export default function Project(props) {
           <div className='hover__bgr'>
             <img src={thumbnailHover} alt={title} />
           </div>
-        </Box>
+        </div>
       </div>
     </Grid>
   );
