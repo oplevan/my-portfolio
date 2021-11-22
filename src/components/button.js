@@ -8,7 +8,7 @@ export default function Button(props) {
 
   if (type && type === "neon") {
     return (
-      <div className='button-wrap'>
+      <div className="button-wrap">
         <NavLink
           type={type}
           className={`button neon${extraClassName ? " " + extraClassName : ""}${size ? " " + size : ""}${
@@ -25,9 +25,24 @@ export default function Button(props) {
         </NavLink>
       </div>
     );
+  } else if (type === "back-list") {
+    return (
+      <NavLink type={type} to={linkTo} className={`button back-list${extraClassName ? " " + extraClassName : ""}`} title={title}>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <span>Back</span>
+      </NavLink>
+    );
   } else {
     return (
-      <div className='button-wrap'>
+      <div className="button-wrap">
         <button
           {...(clickHandler && { onClick: () => clickHandler.func(clickHandler.args) })}
           type={type}
@@ -35,7 +50,7 @@ export default function Button(props) {
         >
           {icon && (
             <span>
-              <img className='icon' src={icon} alt='' />
+              <img className="icon" src={icon} alt="" />
             </span>
           )}
           {title && <span>{title}</span>}

@@ -5,3 +5,4 @@ export { default as ParticlesBgr } from "./ParticlesBgr";
 export { default as Footer } from "./Footer";
 export { default as Item } from "./item";
 export { default as Button } from "./button";
+export { default as MediaWindow } from "./MediaWindow/MediaWindow";

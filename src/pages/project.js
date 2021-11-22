@@ -1,65 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { Box, Container, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { portfolio } from "../components/data/customData";
+import React, { useEffect } from "react";
+import { Button, ParticlesBgr, Navbar, useFullPageLoader } from "../components";
+import { Box, Container } from "@material-ui/core";
 import { useParams } from "react-router-dom";
-import ParticlesBgr from "../components/ParticlesBgr";
 import LinkIcon from "@material-ui/icons/Link";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import Footer from "../components/Footer";
+
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
-import useFullPageLoader from "../components/useFullPageLoader";
-import Navbar from "../components/Navbar";
-import { NavLink } from "react-router-dom";
-import data from "../config.json";
 
-const useStyles = makeStyles((theme) => ({
-  button: {
-    margin: theme.spacing(1),
-    borderRadius: 0,
-    background: "transparent",
-    border: "solid 1px #08fdd8",
-    color: "#08fdd8",
-    marginLeft: 0,
-    "&:hover": {
-      background: "#08fdd8",
-      color: "black",
-    },
-  },
-}));
-const defaultState = {
-  id: null,
-  title: null,
-  description: {
-    short: null,
-    full: null,
-  },
-  carouselImages: [],
-  thumbnail: null,
-  thumbnailHover: null,
-  tags: [],
-  category: [],
-  animation: {
-    type: null,
-    delay: null,
-  },
-  links: {
-    web: null,
-    gitHub: null,
-  },
-};
+import { portfolio } from "../components/data/customData";
+import config from "../config.json";
+import "../styles/pages/project.scss";
+
 export default function Project() {
-  const [project, setProject] = useState(defaultState);
-  const [loader, showLoader, hideLoader] = useFullPageLoader();
   const { id } = useParams();
-  const classes = useStyles();
-
-  useEffect(() => {
-    const currentProject = portfolio.find((project) => project.id === id);
-    setProject(currentProject);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const data = portfolio.find((project) => project.id === id);
+  const [loader, showLoader, hideLoader] = useFullPageLoader();
 
   const fetchData = () => {
     showLoader();
@@ -72,61 +28,20 @@ export default function Project() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { title, description, carouselImages, tags, links } = project;
+  const { title, description, carouselImages, tags, links } = data;
   return (
     <>
       <Navbar />
-      <Box component='main' className='page__content' id={id}>
+      <Box component="main" id={id}>
         <ParticlesBgr />
-        <Container maxWidth='md' className='project_container' component='section'>
-          <NavLink to={data.url.PORTFOLIO} className='back_list' title='Back to Portfolio'>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <span>Back</span>
-          </NavLink>
-          <header>
-            <h1>{title}</h1>
-            <p>{description.short}</p>
-            <div className='share'>
-              {links.web ? (
-                <Button
-                  href={links.web}
-                  target='_blank'
-                  variant='contained'
-                  color='primary'
-                  className={classes.button}
-                  startIcon={<LinkIcon />}
-                >
-                  Visit the website
-                </Button>
-              ) : (
-                ""
-              )}
-              {links.gitHub ? (
-                <Button
-                  href={links.gitHub}
-                  target='_blank'
-                  variant='contained'
-                  color='primary'
-                  className={classes.button}
-                  startIcon={<GitHubIcon />}
-                >
-                  View on gitHub
-                </Button>
-              ) : (
-                ""
-              )}
-            </div>
-          </header>
-          <div className='media'>
-            <div className='bar'>
+        <Container maxWidth="md" className="container" component="section">
+          <Button type="back-list" linkTo={config.url.PORTFOLIO} extraClassName="back-btn" />
+          <h1>{title}</h1>
+          <p>{description.short}</p>
+          {links.web && <Button type="neon" linkTo={links.web} title="Visit Website" size="medium" icon={<LinkIcon />} />}
+          {links.gitHub && <Button type="neon" linkTo={links.gitHub} title="View source" size="medium" icon={<GitHubIcon />} />}
+          <div className="media">
+            <div className="bar">
               <h3>{title}</h3>
               <i></i>
             </div>
@@ -136,7 +51,7 @@ export default function Project() {
               ))}
             </AwesomeSlider>
           </div>
-          <div className='text'>
+          <div className="text">
             <section>
               {description.full && (
                 <>
@@ -150,14 +65,13 @@ export default function Project() {
               <h2>Technical Sheet</h2>
               <p>Code technologies I got involved with while working on this project.</p>
               <hr />
-              <ul className='keywords'>
+              <ul className="keywords">
                 {tags.map((tag, i) => (
                   <li key={i}>{tag}</li>
                 ))}
               </ul>
             </section>
           </div>
-          <Footer />
         </Container>
       </Box>
       {loader}

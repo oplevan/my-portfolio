@@ -1,0 +1,186 @@
+@import "../shared";
+
+.container {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+
+  .back-btn {
+    position: fixed;
+    z-index: 101;
+    top: 45px;
+    left: 150px;
+
+    @include breakpoint("md") {
+      top: 70px;
+      right: 13px;
+      left: auto;
+    }
+  }
+  h1 {
+    color: $heading;
+    font-size: 36px;
+    font-weight: 700;
+    width: 100%;
+    text-transform: none;
+    text-align: left;
+    position: unset;
+    margin: 0;
+  }
+}
+
+.container .media {
+  margin: 20px 0 60px;
+  position: relative;
+  display: block;
+  width: 100%;
+  background-color: #333;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.15);
+  overflow: visible;
+
+  .bar {
+    position: relative;
+    height: 24px;
+    width: 100%;
+    background-color: #ddd;
+    color: #6a6a6a;
+    z-index: 100;
+
+    i,
+    i:after,
+    i:before {
+      height: 12px;
+      width: 12px;
+      background-color: #ff5f57;
+      border-radius: 50%;
+      position: absolute;
+      top: 6px;
+      left: 10px;
+    }
+
+    i:before,
+    i:before {
+      content: "";
+      left: 16px;
+      background-color: #ffbd2e;
+      top: 0;
+    }
+
+    i:after,
+    i:after {
+      content: "";
+      left: 32px;
+      background-color: #28ca41;
+      top: 0;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 26px;
+      letter-spacing: -0.5px;
+      color: #8a8a8a;
+      margin: 0;
+    }
+  }
+}
+.container .awssld__bullets button {
+  width: 12px;
+  height: 12px;
+}
+.container .awssld__bullets .awssld__bullets--active {
+  background: var(--primaryColor--1);
+}
+.container .awssld__controls button {
+  height: 100%;
+  width: 25%;
+  top: 0;
+}
+
+.aws-btn {
+  --slider-height-percentage: 52%;
+  --slider-transition-duration: 700ms;
+  --organic-arrow-thickness: 2px;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 20px;
+  --organic-arrow-color: #d5d5d5;
+  --control-button-width: 10%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: #fafafa;
+  --control-bullet-active-color: #d5d5d5;
+  --loader-bar-color: #08fdd8;
+  --loader-bar-height: 5px;
+}
+.container .awssld {
+  --slider-height-percentage: 52%;
+}
+.container .awssld__controls__arrow-left:before,
+.container .awssld__controls__arrow-left:after {
+  left: 18%;
+}
+.container .awssld__controls__arrow-right:before,
+.container .awssld__controls__arrow-right:after {
+  right: 18%;
+}
+.container .awssld__controls__arrow-left,
+.container .awssld__controls__arrow-right {
+  height: 20px;
+}
+.container .awssld__controls__arrow-left:before,
+.container .awssld__controls__arrow-left:after,
+.container .awssld__controls__arrow-right:before,
+.container .awssld__controls__arrow-right:after {
+  width: 2px;
+  background-color: var(--primaryColor--1);
+}
+
+.container .carousel-control-prev,
+.container .carousel-control-next {
+  width: 25%;
+}
+.container .awssld__prev:hover {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0px, rgba(0, 0, 0, 0) 100%) rgba(0, 0, 0, 0);
+}
+
+.container .awssld__next:hover {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.65) 0px, rgba(0, 0, 0, 0) 100%) rgba(0, 0, 0, 0);
+}
+
+.container .text {
+  text-align: left;
+}
+
+.text section {
+  margin-bottom: 3rem;
+}
+
+.text h2 {
+  font-size: 2rem;
+  line-height: 1.35em;
+  font-weight: 600;
+  position: relative;
+  display: block;
+  letter-spacing: -0.045em;
+  padding: 0;
+  margin-bottom: 0.4em;
+}
+
+.text hr {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #484848;
+  position: relative;
+  border: 0;
+  margin: 0.5em 0 1em;
+}
+
+.text .keywords {
+  list-style: circle;
+  padding: 0 1.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}

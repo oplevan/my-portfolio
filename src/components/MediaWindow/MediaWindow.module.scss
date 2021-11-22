@@ -1,0 +1,55 @@
+@import "../../styles/shared";
+
+.container {
+  z-index: 10;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+
+  .title {
+    position: relative;
+    height: 24px;
+    width: 100%;
+    background-color: #ddd;
+    color: #6a6a6a;
+    z-index: 100;
+
+    i,
+    i:after,
+    i:before {
+      height: 12px;
+      width: 12px;
+      background-color: #ff5f57;
+      border-radius: 50%;
+      position: absolute;
+      top: 6px;
+      left: 10px;
+    }
+
+    i:before,
+    i:before {
+      content: "";
+      left: 16px;
+      background-color: #ffbd2e;
+      top: 0;
+    }
+
+    i:after,
+    i:after {
+      content: "";
+      left: 32px;
+      background-color: #28ca41;
+      top: 0;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 26px;
+      letter-spacing: -0.5px;
+      color: #8a8a8a;
+      margin: 0;
+    }
+  }
+}
