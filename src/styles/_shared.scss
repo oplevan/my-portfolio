@@ -82,7 +82,7 @@ $breakpoint-xlarge: 1536px !default;
     $max: 99999px;
   }
 
-  @media (min-width: $min - 1) AND (max-width: $max) {
+  @media (min-width: $min) AND (max-width: $max) {
     @content;
   }
 }

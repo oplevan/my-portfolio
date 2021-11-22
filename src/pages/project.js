@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button, ParticlesBgr, Navbar, useFullPageLoader } from "../components";
+import { Button, ParticlesBgr, Navbar, useFullPageLoader, MediaWindow } from "../components";
 import { Box, Container } from "@material-ui/core";
 import { useParams } from "react-router-dom";
 import LinkIcon from "@material-ui/icons/Link";
@@ -7,6 +7,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
+import "react-awesome-slider/dist/custom-animations/cube-animation.css";
 
 import { portfolio } from "../components/data/customData";
 import config from "../config.json";
@@ -40,17 +41,13 @@ export default function Project() {
           <p>{description.short}</p>
           {links.web && <Button type="neon" linkTo={links.web} title="Visit Website" size="medium" icon={<LinkIcon />} />}
           {links.gitHub && <Button type="neon" linkTo={links.gitHub} title="View source" size="medium" icon={<GitHubIcon />} />}
-          <div className="media">
-            <div className="bar">
-              <h3>{title}</h3>
-              <i></i>
-            </div>
-            <AwesomeSlider>
+          <MediaWindow title={title} className="carousel-container">
+            <AwesomeSlider animation="cubeAnimation">
               {carouselImages.map((img, i) => (
                 <div data-src={img} key={i} />
               ))}
             </AwesomeSlider>
-          </div>
+          </MediaWindow>
           <div className="text">
             <section>
               {description.full && (
@@ -65,7 +62,7 @@ export default function Project() {
               <h2>Technical Sheet</h2>
               <p>Code technologies I got involved with while working on this project.</p>
               <hr />
-              <ul className="keywords">
+              <ul>
                 {tags.map((tag, i) => (
                   <li key={i}>{tag}</li>
                 ))}
