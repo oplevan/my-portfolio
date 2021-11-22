@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { Box, Typography, Container } from "@material-ui/core";
 import { Speed, Devices, WbIncandescentOutlined, Cached } from "@material-ui/icons";
 import html5Icon from "../assets/devicons/original/html5-original.svg";
@@ -22,7 +21,7 @@ import ubuntuIcon from "../assets/devicons/original/ubuntu-plain.svg";
 import seoIcon from "../assets/devicons/original/seo.svg";
 import photoshopIcon from "../assets/devicons/original-wordmark/photoshop-line.svg";
 
-import { ParticlesBgr, useFullPageLoader, Button } from "../components";
+import { Navbar, ParticlesBgr, useFullPageLoader, Button } from "../components";
 
 import "../styles/pages/about.scss";
 
@@ -90,15 +89,15 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <Box component='main'>
+      <Box component="main">
         <ParticlesBgr />
-        <Container maxWidth='md' component='section'>
+        <Container maxWidth="md" component="section">
           <h1>About me</h1>
-          <Box component='div' className='cards-wrap'>
+          <Box component="div" className="cards-wrap">
             {labelItems.map((item, i) => (
-              <div className='card' key={i}>
-                <div className='icon'>{item.labelIcon}</div>
-                <div className='text'>
+              <div className="card" key={i}>
+                <div className="icon">{item.labelIcon}</div>
+                <div className="text">
                   <span>{item.labelName}</span>
                   {item.labelText}
                 </div>
@@ -106,9 +105,9 @@ export default function About() {
             ))}
           </Box>
         </Container>
-        <Container maxWidth='lg' component='section' className='content'>
-          <Box component='div' className='bio'>
-            <Typography variant='h4'>Who am I?</Typography>
+        <Container maxWidth="lg" component="section" className="content">
+          <Box component="div" className="bio">
+            <Typography variant="h4">Who am I?</Typography>
             <p>
               I am a <b>Front-End Web Developer</b> based in London, UK. I have serious passion for UI effects, animations and
               creating intuitive, dynamic user experience. Well-organised person, problem solver, independent employee with high
@@ -116,7 +115,7 @@ export default function About() {
               positive people.
             </p>
             <p>Also, I'm planning to extend my skill set to become a full stack developer in the near future.</p>
-            <Typography variant='h6'>Random facts</Typography>
+            <Typography variant="h6">Random facts</Typography>
             <ul>
               <li>I'm a big fan of MMA and boxing.</li>
               <li>I prefer mountains to the ocean and beaches</li>
@@ -125,14 +124,14 @@ export default function About() {
               <li>I'm a bit of a clean freak</li>
             </ul>
           </Box>
-          <Box component='div' className='skills'>
-            <Typography variant='h4'>Tech Skills</Typography>
+          <Box component="div" className="skills">
+            <Typography variant="h4">Tech Skills</Typography>
             {techSkills.map((item, i) => (
-              <Button key={i} type='default' title={item.title} icon={item.icon} />
+              <Button key={i} type="default" title={item.title} icon={item.icon} />
             ))}
-            <Typography variant='h6'>Other skills</Typography>
+            <Typography variant="h6">Other skills</Typography>
             {otherSkills.map((item, i) => (
-              <Button key={i} type='default' title={item.title} icon={item.icon} />
+              <Button key={i} type="default" title={item.title} icon={item.icon} />
             ))}
           </Box>
         </Container>

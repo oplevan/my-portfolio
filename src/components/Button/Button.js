@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/components/button.scss";
+import "./Button.scss";
 
 export default function Button(props) {
   const { type, title, size, linkTo, icon, extraClassName, reflect, clickHandler } = props;

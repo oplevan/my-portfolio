@@ -1,4 +1,5 @@
-@import "../shared";
+@import "../../styles/shared";
+
 .button-wrap {
   display: inline-block;
   &:not(:last-child) {

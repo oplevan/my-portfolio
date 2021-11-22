@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, Typography, Container } from "@material-ui/core";
 import Timeline from "@material-ui/lab/Timeline";
@@ -11,9 +10,7 @@ import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import Paper from "@material-ui/core/Paper";
 import { timeline } from "../components/data/customData";
-import ParticlesBgr from "../components/ParticlesBgr";
-import Footer from "../components/Footer";
-import useFullPageLoader from "../components/useFullPageLoader";
+import { Navbar, ParticlesBgr, useFullPageLoader, Button } from "../components";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -48,34 +45,34 @@ export default function Experience() {
   return (
     <>
       <Navbar />
-      <Box component='main' className='page__content' id='timeline'>
+      <Box component="main" className="page__content" id="timeline">
         <ParticlesBgr />
-        <Container maxWidth='lg' component='section'>
-          <h3 className='page__title'>Experience</h3>
-          <Timeline align='alternate'>
+        <Container maxWidth="lg" component="section">
+          <h3 className="page__title">Experience</h3>
+          <Timeline align="alternate">
             {timeline.map((item, i) => (
-              <TimelineItem key={i} className='timeline__item'>
+              <TimelineItem key={i} className="timeline__item">
                 <TimelineOppositeContent>
-                  <Box component='div' className='period'>
-                    <div className='to'>{item.end}</div>
-                    <div className='from'>{item.start}</div>
+                  <Box component="div" className="period">
+                    <div className="to">{item.end}</div>
+                    <div className="from">{item.start}</div>
                   </Box>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                  <TimelineDot className='dot' />
-                  <TimelineConnector className='connector' />
-                  <TimelineDot className='dot' />
+                  <TimelineDot className="dot" />
+                  <TimelineConnector className="connector" />
+                  <TimelineDot className="dot" />
                 </TimelineSeparator>
                 <TimelineContent>
                   <Paper elevation={3} className={classes.paper}>
-                    <Typography variant='h6' component='h3'>
+                    <Typography variant="h6" component="h3">
                       {item.position}
                       <div>
                         {item.company} - {item.type}
                       </div>
                       <div>{item.where}</div>
                     </Typography>
-                    <ul className='duty__list'>
+                    <ul className="duty__list">
                       {item.description.map((el, i) => {
                         return <li key={i}>{el}</li>;
                       })}
@@ -93,7 +90,6 @@ export default function Experience() {
               </TimelineItem>
             ))}
           </Timeline>
-          <Footer />
         </Container>
       </Box>
       {loader}

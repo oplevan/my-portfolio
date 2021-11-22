@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Container, Grid } from "@material-ui/core";
 import { filters, portfolio } from "../components/data/customData";
-import useFullPageLoader from "../components/useFullPageLoader";
-import ParticlesBgr from "../components/ParticlesBgr";
-import { Item, Navbar, Button } from "../components/";
+import { GridItem, Navbar, Button, useFullPageLoader, ParticlesBgr } from "../components/";
 
 import "../styles/pages/portfolio.scss";
 
@@ -75,7 +73,7 @@ export default function Portfolio() {
         </Container>
         <Container maxWidth="lg" component="section">
           <Grid container spacing={5} justifyContent="center">
-            {displayedItems.map((item) => (item.activeFilter ? <Item key={item.id} {...item}></Item> : ""))}
+            {displayedItems.map((item) => (item.activeFilter ? <GridItem key={item.id} {...item}></GridItem> : ""))}
           </Grid>
         </Container>
       </Box>

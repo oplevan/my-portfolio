@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../assets/avatar.png";
+import avatar from "../../assets/avatar.png";
 import { Avatar } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
@@ -11,7 +11,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Home, Person, Timeline, Apps, ContactMail, GitHub, LinkedIn, Facebook, Instagram } from "@material-ui/icons";
-import config from "../config.json";
+import config from "../../config.json";
 
 const drawerWidth = 75;
 
@@ -207,18 +207,18 @@ const Navbar = (props) => {
 
   const drawer = (
     <>
-      <Avatar className={classes.avatar} src={avatar} alt='Oleg Plevan' />
-      <div className='nav-wrap flex column'>
+      <Avatar className={classes.avatar} src={avatar} alt="Oleg Plevan" />
+      <div className="nav-wrap flex column">
         {menuItems.map((lsItem, key) => (
           <NavLink key={key} to={lsItem.listPath} exact>
-            <div className='icon'>{lsItem.listIcon}</div>
-            <div className='title'>{lsItem.listText}</div>
+            <div className="icon">{lsItem.listIcon}</div>
+            <div className="title">{lsItem.listText}</div>
           </NavLink>
         ))}
       </div>
       <div className={classes.socialContainer}>
         {socialItems.map((lsItem, key) => (
-          <a className={classes.listItem} key={key} href={lsItem.listPath} target='_blank' rel='noreferrer'>
+          <a className={classes.listItem} key={key} href={lsItem.listPath} target="_blank" rel="noreferrer">
             <ListItemIcon className={classes.listItemIcon}>{lsItem.listIcon}</ListItemIcon>
           </a>
         ))}
@@ -230,12 +230,12 @@ const Navbar = (props) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position='fixed' className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            edge='end'
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
             onClick={handleDrawerToggle}
             className={classes.menuButton}
           >
@@ -244,10 +244,10 @@ const Navbar = (props) => {
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>
-        <Hidden smUp implementation='css'>
+        <Hidden smUp implementation="css">
           <Drawer
             container={container}
-            variant='temporary'
+            variant="temporary"
             anchor={theme.direction === "rtl" ? "right" : "left"}
             open={mobileOpen}
             onClose={handleDrawerToggle}
@@ -261,12 +261,12 @@ const Navbar = (props) => {
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden xsDown implementation='css'>
+        <Hidden xsDown implementation="css">
           <Drawer
             classes={{
               paper: classes.drawerPaper,
             }}
-            variant='permanent'
+            variant="permanent"
             // close
           >
             {drawer}

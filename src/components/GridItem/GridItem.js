@@ -4,9 +4,8 @@ import { withStyles } from "@material-ui/core/styles";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LanguageIcon from "@material-ui/icons/Language";
 import Tooltip from "@material-ui/core/Tooltip";
-import { Button, MediaWindow } from ".";
-
-import "../styles/components/item.scss";
+import { Button, MediaWindow } from "../";
+import "./GridItem.scss";
 
 // CSS Styles
 const DarkTooltip = withStyles((theme) => ({
@@ -23,9 +22,7 @@ const DarkTooltip = withStyles((theme) => ({
   },
 }))(Tooltip);
 
-export default function Item(props) {
-  const { id, title, thumbnail, tags, thumbnailHover, links } = props;
-
+export default function GridItem({ id, title, thumbnail, tags, thumbnailHover, links }) {
   return (
     <Grid item sm={12} md={6} id={id}>
       <MediaWindow title={title}>
@@ -64,12 +61,6 @@ export default function Item(props) {
           </div>
         </div>
       </MediaWindow>
-      {/* <div className="inner-container">
-        <div className="bar">
-          <h3>{title}</h3>
-          <i></i>
-        </div>
-      </div> */}
     </Grid>
   );
 }
