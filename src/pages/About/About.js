@@ -1,29 +1,29 @@
 import React from "react";
 import { Box, Typography, Container } from "@material-ui/core";
 import { Speed, Devices, WbIncandescentOutlined, Cached } from "@material-ui/icons";
-import html5Icon from "../assets/devicons/original/html5-original.svg";
-import css3Icon from "../assets/devicons/original/css3-original.svg";
-import jsIcon from "../assets/devicons/original/javascript-original.svg";
-import esIcon from "../assets/devicons/original/es6.svg";
-import reactIcon from "../assets/devicons/original/react-original.svg";
-import reduxIcon from "../assets/devicons/original/redux-original.svg";
-import bootstrapIcon from "../assets/devicons/original/bootstrap-plain.svg";
-import materialUiIcon from "../assets/devicons/original/material-ui-original.svg";
-import npmIcon from "../assets/devicons/original-wordmark/npm-original-wordmark.svg";
-import gitIcon from "../assets/devicons/original/git-original.svg";
-import gitHubIcon from "../assets/devicons/original/github-original.svg";
-import mysqlIcon from "../assets/devicons/original/mysql-original.svg";
-import sassIcon from "../assets/devicons/original/sass-original.svg";
-import lessIcon from "../assets/devicons/original-wordmark/less-plain-wordmark.svg";
-import webpackIcon from "../assets/devicons/original/webpack-original.svg";
-import jsxIcon from "../assets/devicons/original/jsx-original.svg";
-import ubuntuIcon from "../assets/devicons/original/ubuntu-plain.svg";
-import seoIcon from "../assets/devicons/original/seo.svg";
-import photoshopIcon from "../assets/devicons/original-wordmark/photoshop-line.svg";
+import html5Icon from "../../assets/devicons/original/html5-original.svg";
+import css3Icon from "../../assets/devicons/original/css3-original.svg";
+import jsIcon from "../../assets/devicons/original/javascript-original.svg";
+import esIcon from "../../assets/devicons/original/es6.svg";
+import reactIcon from "../../assets/devicons/original/react-original.svg";
+import reduxIcon from "../../assets/devicons/original/redux-original.svg";
+import bootstrapIcon from "../../assets/devicons/original/bootstrap-plain.svg";
+import materialUiIcon from "../../assets/devicons/original/material-ui-original.svg";
+import npmIcon from "../../assets/devicons/original-wordmark/npm-original-wordmark.svg";
+import gitIcon from "../../assets/devicons/original/git-original.svg";
+import gitHubIcon from "../../assets/devicons/original/github-original.svg";
+import mysqlIcon from "../../assets/devicons/original/mysql-original.svg";
+import sassIcon from "../../assets/devicons/original/sass-original.svg";
+import lessIcon from "../../assets/devicons/original-wordmark/less-plain-wordmark.svg";
+import webpackIcon from "../../assets/devicons/original/webpack-original.svg";
+import jsxIcon from "../../assets/devicons/original/jsx-original.svg";
+import ubuntuIcon from "../../assets/devicons/original/ubuntu-plain.svg";
+import seoIcon from "../../assets/devicons/original/seo.svg";
+import photoshopIcon from "../../assets/devicons/original-wordmark/photoshop-line.svg";
 
-import { Navbar, ParticlesBgr, useFullPageLoader, Button } from "../components";
+import { Navbar, ParticlesBgr, useFullPageLoader, Button } from "../../components";
 
-import "../styles/pages/about.scss";
+import "./about.scss";
 
 const labelItems = [
   {

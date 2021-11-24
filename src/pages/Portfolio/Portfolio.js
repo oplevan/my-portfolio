@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Box, Container, Grid } from "@material-ui/core";
-import { filters, portfolio } from "../components/data/customData";
-import { GridItem, Navbar, Button, useFullPageLoader, ParticlesBgr } from "../components/";
+import { filters, portfolio } from "../../components/data/customData";
+import { GridItem, Navbar, Button, useFullPageLoader, ParticlesBgr } from "../../components";
 
-import "../styles/pages/portfolio.scss";
+import "./portfolio.scss";
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("all");

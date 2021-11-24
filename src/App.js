@@ -1,20 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import config from "./config.json";
+import { Home, About, Portfolio, Project, Experience, Contact, PageNotFound } from "./pages";
 import { Footer } from "./components";
-
-// CSS
-// import "./App.css";
 import "./styles/main.scss";
-
-// Pages
-import Home from "./pages/home";
-import About from "./pages/about";
-import Portfolio from "./pages/portfolio";
-import Project from "./pages/project";
-import Experience from "./pages/experience";
-import Contact from "./pages/contact";
-import Error from "./pages/404";
+import config from "./config.json";
 
 export default function App() {
   return (
@@ -26,7 +15,7 @@ export default function App() {
         <Route path={config.url.PROJECT} children={<Project />} />
         <Route path={config.url.TIMELINE} component={Experience} />
         <Route path={config.url.CONTACT} component={Contact} />
-        <Route path='*' component={Error} />
+        <Route path="*" component={PageNotFound} />
       </Switch>
       <Footer />
     </Router>

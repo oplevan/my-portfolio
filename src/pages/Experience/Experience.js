@@ -9,8 +9,8 @@ import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import Paper from "@material-ui/core/Paper";
-import { timeline } from "../components/data/customData";
-import { Navbar, ParticlesBgr, useFullPageLoader, Button } from "../components";
+import { timeline } from "../../components/data/customData";
+import { Navbar, ParticlesBgr, useFullPageLoader } from "../../components";
 
 const useStyles = makeStyles((theme) => ({
   paper: {

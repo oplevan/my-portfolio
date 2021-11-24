@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Container } from "@material-ui/core";
-import { ParticlesBgr } from "../components";
-import astronaut from "../assets/astronaut.png";
+import { ParticlesBgr } from "../../components";
 
-export default function Error() {
+export default function PageNotFound() {
   return (
     <>
       <Box component="section" className="page__content flex" id="page-404">
@@ -24,7 +23,7 @@ export default function Error() {
               <div className="error_404_letter">
                 <h1>0</h1>
                 <div className="astronaut">
-                  <img src={astronaut} alt="" />
+                  <img src={require("../../assets/astronaut.png").default} alt="" />
                 </div>
               </div>
               <div className="error_404_letter color">

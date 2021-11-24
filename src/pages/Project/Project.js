@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button, ParticlesBgr, Navbar, useFullPageLoader, MediaWindow } from "../components";
+import { Button, ParticlesBgr, Navbar, useFullPageLoader, MediaWindow } from "../../components";
 import { Box, Container } from "@material-ui/core";
 import { useParams } from "react-router-dom";
 import LinkIcon from "@material-ui/icons/Link";
@@ -9,9 +9,9 @@ import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import "react-awesome-slider/dist/custom-animations/cube-animation.css";
 
-import { portfolio } from "../components/data/customData";
-import config from "../config.json";
-import "../styles/pages/project.scss";
+import { portfolio } from "../../components/data/customData";
+import config from "../../config.json";
+import "./project.scss";
 
 export default function Project() {
   const { id } = useParams();

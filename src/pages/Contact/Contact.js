@@ -3,7 +3,7 @@ import { Box, Typography, Container } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import Form from "react-bootstrap/Form";
 import Button from "@material-ui/core/Button";
-import { Navbar, ParticlesBgr, useFullPageLoader } from "../components";
+import { Navbar, ParticlesBgr, useFullPageLoader } from "../../components";
 
 export default function Contact() {
   const [loader, showLoader, hideLoader] = useFullPageLoader();

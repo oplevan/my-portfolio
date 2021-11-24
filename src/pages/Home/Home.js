@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Typed from "react-typed";
-import config from "../config.json";
+import config from "../../config.json";
 import { Typography, Box, Container } from "@material-ui/core";
-import { Navbar, useFullPageLoader, ParticlesBgr, Button } from "../components";
-import "../styles/pages/home.scss";
+import { Navbar, useFullPageLoader, ParticlesBgr, Button } from "../../components";
 import CloudDownloadOutlined from "@material-ui/icons/CloudDownloadOutlined";
+import "./home.scss";
 
 export default function Home() {
   const [loader, showLoader, hideLoader] = useFullPageLoader();
@@ -50,7 +50,7 @@ export default function Home() {
             </Box>
           </Box>
           <div className="hero-img">
-            <img src={require("../assets/home-img.png").default} alt="Home Hero Image" />
+            <img src={require("../../assets/home-img.png").default} alt="Home Hero Image" />
           </div>
         </Container>
       </Box>
