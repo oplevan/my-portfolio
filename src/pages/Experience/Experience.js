@@ -11,6 +11,7 @@ import TimelineDot from "@material-ui/lab/TimelineDot";
 import Paper from "@material-ui/core/Paper";
 import { timeline } from "../../components/data/customData";
 import { Navbar, ParticlesBgr, useFullPageLoader } from "../../components";
+import "./experience.scss";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -45,13 +46,13 @@ export default function Experience() {
   return (
     <>
       <Navbar />
-      <Box component="main" className="page__content" id="timeline">
+      <Box component="main" id="timeline">
         <ParticlesBgr />
         <Container maxWidth="lg" component="section">
-          <h3 className="page__title">Experience</h3>
+          <h1>Experience</h1>
           <Timeline align="alternate">
             {timeline.map((item, i) => (
-              <TimelineItem key={i} className="timeline__item">
+              <TimelineItem key={i} className="timeline-item">
                 <TimelineOppositeContent>
                   <Box component="div" className="period">
                     <div className="to">{item.end}</div>
@@ -67,20 +68,20 @@ export default function Experience() {
                   <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h3">
                       {item.position}
-                      <div>
-                        {item.company} - {item.type}
-                      </div>
-                      <div>{item.where}</div>
                     </Typography>
-                    <ul className="duty__list">
+                    <div className="small-text">
+                      {item.company} - {item.type}
+                    </div>
+                    <div className="small-text">{item.where}</div>
+                    <ul className="duty-list">
                       {item.description.map((el, i) => {
                         return <li key={i}>{el}</li>;
                       })}
                     </ul>
                     {item.achievements ? (
                       <p>
-                        <b>Achievements:</b>
-                        {` ${item.achievements}`}
+                        <b>Achievements: </b>
+                        {item.achievements}
                       </p>
                     ) : (
                       ""
