@@ -1,0 +1,23 @@
+@import "../../styles/shared";
+
+footer {
+  position: relative;
+  padding: 150px 0 50px;
+  text-align: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 6rem;
+    left: 50%;
+    top: 73px;
+    transform: translateX(-3rem);
+    border-bottom: solid 4px #cacaca;
+  }
+
+  .heading {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 22px;
+  }
+}

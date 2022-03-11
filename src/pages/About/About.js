@@ -88,7 +88,6 @@ export default function About() {
 
   return (
     <>
-      <Navbar />
       <Box component="main">
         <ParticlesBgr />
         <Container maxWidth="md" component="section">

@@ -32,7 +32,6 @@ export default function Project() {
   const { title, description, carouselImages, tags, links } = data;
   return (
     <>
-      <Navbar />
       <Box component="main" id={id}>
         <ParticlesBgr />
         <Container maxWidth="md" className="container" component="section">

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Container } from "@material-ui/core";
+import "./Footer.scss";
 import data from "../../config.json";
 
 export default function Footer() {

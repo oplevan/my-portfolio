@@ -387,33 +387,6 @@ main {
 **  Loader End
 ***************/
 
-@media only screen and (max-width: 1450px) {
-  /* md */
-  .page__content {
-    padding-left: 4.7rem;
-    padding-right: 0;
-  }
-}
-
-@media only screen and (max-width: 960px) {
-  /* sm */
-  .page__title {
-    font-size: 2.3rem;
-  }
-  .page__title:after {
-    width: 4.5rem;
-    transform: translateX(-2.25rem);
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  /* xs */
-  .page__content {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-}
-
 /*
 ==========================
   Contact Page Styles
@@ -652,22 +625,5 @@ main {
 @media only screen and (max-width: 700px) {
   .error_404_letter h1 {
     font-size: 12rem;
-  }
-}
-
-/*
-=====================
-    Footer Styles
-=====================
-*/
-footer {
-  padding-top: 55px;
-  padding-bottom: 55px;
-  text-align: center;
-
-  .heading {
-    margin-bottom: 25px;
-    font-weight: 700;
-    font-size: 22px;
   }
 }

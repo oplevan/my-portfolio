@@ -45,7 +45,6 @@ export default function Experience() {
 
   return (
     <>
-      <Navbar />
       <Box component="main" id="timeline">
         <ParticlesBgr />
         <Container maxWidth="lg" component="section">

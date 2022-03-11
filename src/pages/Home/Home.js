@@ -19,7 +19,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
       <Box maxWidth="xlg" component="main" className="home">
         <ParticlesBgr />
         <Container component="section" className="container" maxWidth="lg">
